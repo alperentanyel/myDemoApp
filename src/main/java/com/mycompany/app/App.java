@@ -30,7 +30,7 @@ public class App
 
       for(int n:array)
       {
-        if(random.nextInt(1)==1)
+        if(random.nextInt()%2==1)
         s+=(char) n;
         else
         s+=n;
@@ -45,7 +45,7 @@ public class App
       Random random= new Random();
       for(char n:array.toCharArray())
       {
-        if(random.nextInt(1)==1)
+        if(random.nextInt()%2==1)
         s+=(int) n;
         else
         s+=n;
