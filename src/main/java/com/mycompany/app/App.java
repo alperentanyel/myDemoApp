@@ -55,6 +55,23 @@ public class App
       return s;
     }
 
+    public static String passwordMaker(String s, char[] array,int bit_shufle){
+      
+      
+      for(char n:array)
+      {
+        int sh=(int)n;
+        sh=sh<<bit_shufle;
+        char shufled=(char)sh;
+        if(s.indexOf(n)>=0){
+          s.replace(n, shufled);
+        }
+
+      }
+
+      return s;
+    }
+
     public static String passwordMaker(Integer [] array){
       String s="";
       Random random= new Random();
@@ -69,6 +86,8 @@ public class App
 
       return s;
     }
+
+    
 
     
 
