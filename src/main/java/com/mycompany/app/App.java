@@ -30,8 +30,11 @@ public class App
 
       for(int n:array)
       {
-        if(random.nextInt()%2==1)
-        s+=(char) n;
+        if(random.nextInt(8)%2==1)
+        {
+          char c=(char) n;
+          s+=c;
+        }
         else
         s+=n;
 
@@ -45,8 +48,11 @@ public class App
       Random random= new Random();
       for(char n:array.toCharArray())
       {
-        if(random.nextInt()%2==1)
-        s+=(int) n;
+        if(random.nextInt(8)%2==1)
+        {
+          char c=(char) n;
+          s+=c;
+        }
         else
         s+=n;
 
@@ -55,30 +61,29 @@ public class App
       return s;
     }
 
-    public static String passwordMaker(String s, char[] array,int bit_shufle){
+    public static String passwordMaker(String s, char[] array, int bit_shuffle) {
+      StringBuilder sb = new StringBuilder(s);
       
-      
-      for(char n:array)
-      {
-        int sh=(int)n;
-        sh=sh<<bit_shufle;
-        char shufled=(char)sh;
-        if(s.indexOf(n)>=0){
-          s.replace(n, shufled);
-        }
-
+      for (char n : array) {
+          int sh = n + bit_shuffle;
+          char shuffled = (char) sh;
+          sb = new StringBuilder(sb.toString().replace(n, shuffled));
       }
-
-      return s;
-    }
+  
+      return sb.toString();
+  }
 
     public static String passwordMaker(Integer [] array){
       String s="";
       Random random= new Random();
       for(int n:array)
       {
-        if(random.nextInt(1)==1)
-        s+=(char) n;
+        if(random.nextInt(8)%2==1)
+        {
+          char c=(char) n;
+          s+=c;
+        }
+          
         else
         s+=n;
 
