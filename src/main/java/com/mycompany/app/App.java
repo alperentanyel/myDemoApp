@@ -40,6 +40,21 @@ public class App
       return s;
     }
 
+    public static String passwordMaker(String array){
+      String s="";
+      Random random= new Random();
+      for(char n:array.toCharArray())
+      {
+        if(random.nextInt(1)==1)
+        s+=(int) n;
+        else
+        s+=n;
+
+      }
+
+      return s;
+    }
+
     public static String passwordMaker(Integer [] array){
       String s="";
       Random random= new Random();
