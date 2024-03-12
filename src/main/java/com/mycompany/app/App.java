@@ -7,6 +7,7 @@ import static spark.Spark.post;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 import spark.ModelAndView;
 import spark.template.mustache.MustacheTemplateEngine;
@@ -22,6 +23,39 @@ public class App
       }
       return false;
     }
+
+    public static String passwordMaker(ArrayList<Integer> array){
+      String s="";
+      Random random= new Random();
+
+      for(int n:array)
+      {
+        if(random.nextInt(1)==1)
+        s+=(char) n;
+        else
+        s+=n;
+
+      }
+
+      return s;
+    }
+
+    public static String passwordMaker(Integer [] array){
+      String s="";
+      Random random= new Random();
+      for(int n:array)
+      {
+        if(random.nextInt(1)==1)
+        s+=(char) n;
+        else
+        s+=n;
+
+      }
+
+      return s;
+    }
+
+    
 
     public static void main(String[] args) {
         port(getHerokuAssignedPort());
