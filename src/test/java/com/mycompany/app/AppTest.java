@@ -65,6 +65,7 @@ public class AppTest
       System.out.println(result);
       assertNotNull(result);
       assertFalse(result.isEmpty());
+      assertEquals("Pcsswqrd", result);
   }
 
   //@Test
